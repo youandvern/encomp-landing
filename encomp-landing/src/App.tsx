@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
