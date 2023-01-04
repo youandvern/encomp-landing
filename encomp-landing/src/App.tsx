@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import Intro from "./components/Intro";
 import { Box } from "@mui/system";
+import { EXTRA_LIGHT } from "./constants";
 
 export const GLOBAL_THEME = createTheme({
   breakpoints: {
@@ -31,8 +32,13 @@ export const GLOBAL_THEME = createTheme({
       light: "#d2ffc8",
     },
     error: {
-      main: "#bf211e",
-      light: "#ffc8cb",
+      main: "#ffc8cb",
+      light: "#fcdee0",
+      dark: "#bf211e",
+    },
+    text: {
+      primary: EXTRA_LIGHT,
+      secondary: "#fccc83",
     },
   },
   typography: {

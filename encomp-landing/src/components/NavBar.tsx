@@ -1,9 +1,9 @@
-import { Box, styled } from "@mui/material";
-import { EXTRA_LIGHT } from "../color";
+import { Box, Button, styled } from "@mui/material";
+import { ABOUT_CLASS, CONTACT_CLASS, EXTRA_LIGHT, PRODUCT_CLASS, TOP_CLASS } from "../constants";
 
-const NAV_BAR_HEIGHT = 4;
+const NAV_BAR_HEIGHT = 3;
 const NAV_BAR_HEIGHT_SMALL = 2;
-const PADDING = 0.5;
+const PADDING = 0;
 
 const numToRem = (num: number) => `${num}rem`;
 
@@ -55,8 +55,9 @@ const NavBoxPlaceholder = styled(Box)(({ theme }) => ({
 
 const LogoImage = styled("img")(({ theme }) => ({
   objectFit: "contain",
+  cursor: "pointer",
   height: numToRem(NAV_BAR_HEIGHT - PADDING),
-  marginLeft: numToRem(4 * PADDING),
+  marginLeft: numToRem(2),
   marginRight: "5rem",
   [theme.breakpoints.down("md")]: {
     marginLeft: 0,
@@ -70,13 +71,15 @@ const LogoImage = styled("img")(({ theme }) => ({
   },
 }));
 
-const NavBarHref = styled("a")(({ theme }) => ({
+const NavBarHref = styled(Button)(({ theme }) => ({
   textDecoration: "none",
+  textTransform: "none",
   marginInline: "1rem",
   fontFamily: "sans-serif",
   fontSize: "1.5rem",
   fontWeight: "bold",
   color: "inherit",
+  textShadow: "0px 0px 1px black",
   [theme.breakpoints.down("md")]: {
     marginInline: 0,
     fontSize: "1.5rem",
@@ -87,6 +90,11 @@ const NavBarHref = styled("a")(({ theme }) => ({
   },
 }));
 
+const scrollToSection = (idName: string) => () => {
+  const section = document.getElementById(idName);
+  section && section.scrollIntoView({ behavior: "smooth" });
+};
+
 export default function NavBar() {
   return (
     <>
@@ -95,24 +103,14 @@ export default function NavBar() {
       ></NavBoxBackground>
       <NavBoxBackground>
         <NavBox>
-          <LogoImage src="/encomp_noback.png" alt="Encomp Logo" />
-          <NavBarHref
-            href="https://efficalc.encompapp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Product
-          </NavBarHref>
-          <NavBarHref href="https://trussanalysis.com/" target="_blank" rel="noopener noreferrer">
-            About
-          </NavBarHref>
-          <NavBarHref
-            href="https://concrete.encompapp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Contact
-          </NavBarHref>
+          <LogoImage
+            src="/encomp_noback.png"
+            alt="Encomp Logo"
+            onClick={scrollToSection(TOP_CLASS)}
+          />
+          <NavBarHref onClick={scrollToSection(PRODUCT_CLASS)}>Product</NavBarHref>
+          <NavBarHref onClick={scrollToSection(ABOUT_CLASS)}>About</NavBarHref>
+          <NavBarHref onClick={scrollToSection(CONTACT_CLASS)}>Contact</NavBarHref>
           <Box width={{ xs: 0, lg: "16rem" }}></Box>
         </NavBox>
       </NavBoxBackground>
