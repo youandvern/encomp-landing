@@ -135,6 +135,15 @@ const SectionBox = styled(Box)(({ theme }) => ({
   minHeight: "110vh",
 }));
 
+const InlineHref = styled("a")(({ theme }) => ({
+  textDecoration: "none",
+  fontWeight: "inherit",
+  color: theme.palette.secondary.light,
+  "&:hover": {
+    color: theme.palette.secondary.main,
+  },
+}));
+
 export default function Intro() {
   return (
     <OuterContainer>
@@ -143,7 +152,7 @@ export default function Intro() {
           <Spacer className={TOP_CLASS} id={TOP_CLASS} />
           <IntroTitle>Modern tools for better workflows.</IntroTitle>
           <IntroText>
-            Encomp is enabling this generation of engineers to design a more perfect future.
+            <b>Encomp</b> is enabling this generation of engineers to design a more perfect future.
           </IntroText>
           <IntroText>
             With our modern and powerful calculation tools, you can focus on doing the work that
@@ -151,7 +160,16 @@ export default function Intro() {
           </IntroText>
         </SectionBox>
         <SectionBox className={PRODUCT_CLASS} id={PRODUCT_CLASS}>
-          <IntroTitle>efficalc</IntroTitle>
+          <IntroTitle>
+            <InlineHref
+              href="https://efficalc.encompapp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ color: EXTRA_LIGHT }}
+            >
+              efficalc
+            </InlineHref>
+          </IntroTitle>
           <IntroText>
             Our original engineering calculation platform, efficalc, has been thoughtfully designed
             to optimize design calculation workflows for engineers.
@@ -179,6 +197,19 @@ export default function Intro() {
               distribute
             )}
           </Stack>
+          <br />
+          <IntroSubTitle sx={{ fontWeight: "normal" }}>
+            Start using{" "}
+            <InlineHref
+              href="https://efficalc.encompapp.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{ fontWeight: "bold" }}
+            >
+              efficalc
+            </InlineHref>{" "}
+            for free today!
+          </IntroSubTitle>
           <IntroTitle>Other Solutions</IntroTitle>
           <IntroText>
             We created some other helpful tools for engineers that you may find useful:

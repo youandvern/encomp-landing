@@ -75,7 +75,6 @@ const NavBarHref = styled(Button)(({ theme }) => ({
   textDecoration: "none",
   textTransform: "none",
   marginInline: "1rem",
-  fontFamily: "sans-serif",
   fontSize: "1.5rem",
   fontWeight: "bold",
   color: "inherit",
