@@ -164,9 +164,9 @@ export default function Intro() {
               With our modern and powerful calculation tools, you can focus on doing the work that
               matters, and let our technology bring you a new level of efficiency.
             </IntroText>
-            <div className="spot"></div>
-            <div className="spot spot-color-2 spot-middle"></div>
-            <div className="spot spot-color-3 spot-right"></div>
+            <div className="spot spot-multi"></div>
+            <div className="spot spot-multi spot-color-2 spot-middle"></div>
+            <div className="spot spot-multi spot-color-3 spot-right"></div>
           </RelaDiv>
         </SectionBox>
         <SectionBox className={PRODUCT_CLASS} id={PRODUCT_CLASS}>
