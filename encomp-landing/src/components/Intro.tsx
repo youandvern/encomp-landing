@@ -135,6 +135,10 @@ const SectionBox = styled(Box)(({ theme }) => ({
   minHeight: "110vh",
 }));
 
+const RelaDiv = styled("div")({
+  position: "relative",
+});
+
 const InlineHref = styled("a")(({ theme }) => ({
   textDecoration: "none",
   fontWeight: "inherit",
@@ -150,35 +154,46 @@ export default function Intro() {
       <IntroContainer>
         <SectionBox>
           <Spacer className={TOP_CLASS} id={TOP_CLASS} />
-          <IntroTitle>Modern tools for better workflows.</IntroTitle>
-          <IntroText>
-            <b>Encomp</b> is enabling this generation of engineers to design a more perfect future.
-          </IntroText>
-          <IntroText>
-            With our modern and powerful calculation tools, you can focus on doing the work that
-            matters, and let our technology bring you a new level of efficiency.
-          </IntroText>
+          <RelaDiv>
+            <IntroTitle>Modern tools for better workflows.</IntroTitle>
+            <IntroText>
+              <b>Encomp</b> is enabling this generation of engineers to design a more perfect
+              future.
+            </IntroText>
+            <IntroText>
+              With our modern and powerful calculation tools, you can focus on doing the work that
+              matters, and let our technology bring you a new level of efficiency.
+            </IntroText>
+            <div className="spot"></div>
+            <div className="spot spot-color-2 spot-middle"></div>
+            <div className="spot spot-color-3 spot-right"></div>
+          </RelaDiv>
         </SectionBox>
         <SectionBox className={PRODUCT_CLASS} id={PRODUCT_CLASS}>
-          <IntroTitle>
-            <InlineHref
-              href="https://efficalc.encompapp.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              sx={{ color: EXTRA_LIGHT }}
-            >
-              efficalc
-            </InlineHref>
-          </IntroTitle>
-          <IntroText>
-            Our original engineering calculation platform, efficalc, has been thoughtfully designed
-            to optimize design calculation workflows for engineers.
-          </IntroText>
-          <IntroText>
-            Write your inputs and equations like you would by hand and don't waste time with the
-            formatting. Then efficalc will automate the formatting and generate everything you need
-            throughout the lifecycle of the calculation.
-          </IntroText>
+          <RelaDiv>
+            <IntroTitle>
+              <InlineHref
+                href="https://efficalc.encompapp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ color: EXTRA_LIGHT }}
+              >
+                efficalc
+              </InlineHref>
+            </IntroTitle>
+            <IntroText>
+              Our original engineering calculation platform, efficalc, has been thoughtfully
+              designed to optimize design calculation workflows for engineers.
+            </IntroText>
+            <IntroText>
+              Write your inputs and equations like you would by hand and don't waste time with the
+              formatting. Then efficalc will automate the formatting and generate everything you
+              need throughout the lifecycle of the calculation.
+            </IntroText>
+            <div className="spot"></div>
+            <div className="spot spot-middle"></div>
+            <div className="spot spot-right"></div>
+          </RelaDiv>
 
           <Stack direction="row" spacing={0} justifyContent="center" sx={{ flexWrap: "wrap" }}>
             {FeatureItem(
@@ -231,24 +246,34 @@ export default function Intro() {
         </SectionBox>
         <SectionBox className={ABOUT_CLASS} id={ABOUT_CLASS}>
           <Spacer />
-          <IntroTitle>About Encomp</IntroTitle>
-          <IntroText>
-            Encomp exists to solve common problems and create more efficient workflows for
-            engineers. By leveraging the power of technology and providing modern software
-            solutions, we aim to automate the manual and tedious parts of your current workflow in
-            order to empower you to do the work that only you can do.
-          </IntroText>
-          <IntroSubTitle>Vision</IntroSubTitle>
-          <IntroText>
-            Empower engineers to transform their industry and design a more perfect future.
-          </IntroText>
+          <RelaDiv>
+            <IntroTitle>About Encomp</IntroTitle>
+            <IntroText>
+              Encomp exists to solve common problems and create more efficient workflows for
+              engineers. By leveraging the power of technology and providing modern software
+              solutions, we aim to automate the manual and tedious parts of your current workflow in
+              order to empower you to do the work that only you can do.
+            </IntroText>
+            <IntroSubTitle>Vision</IntroSubTitle>
+            <IntroText>
+              Empower engineers to transform their industry and design a more perfect future.
+            </IntroText>
+            <div className="spot spot-color-2"></div>
+            <div className="spot spot-color-2 spot-middle"></div>
+            <div className="spot spot-color-2 spot-right"></div>
+          </RelaDiv>
         </SectionBox>
         <SectionBox className={CONTACT_CLASS} id={CONTACT_CLASS}>
-          <IntroTitle>Contact</IntroTitle>
-          <IntroText>
-            We welcome any feedback or conversation starters and would love to hear from you! We'll
-            get back to you as soon as we see your message.
-          </IntroText>
+          <RelaDiv>
+            <IntroTitle>Contact</IntroTitle>
+            <IntroText>
+              We welcome any feedback or conversation starters and would love to hear from you!
+              We'll get back to you as soon as we see your message.
+            </IntroText>
+            <div className="spot spot-color-3"></div>
+            <div className="spot spot-color-3 spot-middle"></div>
+            <div className="spot spot-color-3 spot-right"></div>
+          </RelaDiv>
           <br />
           <br />
           <IntroText>

@@ -16,6 +16,7 @@ const NavBoxBackground = styled(Box)(({ theme }) => ({
   left: "-10px",
   background: `radial-gradient(circle at right top, white, ${EXTRA_LIGHT})`,
   color: theme.palette.primary.main,
+  zIndex: 1,
   [theme.breakpoints.down("md")]: {
     paddingTop: 0,
   },
