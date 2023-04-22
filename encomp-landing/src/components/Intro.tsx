@@ -1,4 +1,5 @@
-import { Box, CardContent, Stack, styled, Typography } from "@mui/material";
+import { Box, CardContent, Stack, styled, Typography, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import { ABOUT_CLASS, CONTACT_CLASS, EXTRA_LIGHT, PRODUCT_CLASS, TOP_CLASS } from "../constants";
 import ContactForm from "./ContactForm";
@@ -140,7 +141,7 @@ const RelaDiv = styled("div")({
 });
 
 const InlineHref = styled("a")(({ theme }) => ({
-  textDecoration: "none",
+  textDecoration: "underline",
   fontWeight: "inherit",
   color: theme.palette.secondary.light,
   "&:hover": {
@@ -149,6 +150,9 @@ const InlineHref = styled("a")(({ theme }) => ({
 }));
 
 export default function Intro() {
+  const theme = useTheme();
+  const mdBreakPoint = useMediaQuery(theme.breakpoints.up("md"));
+  const xsBreakPoint = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <OuterContainer>
       <IntroContainer>
@@ -173,7 +177,7 @@ export default function Intro() {
           <RelaDiv>
             <IntroTitle>
               <InlineHref
-                href="https://efficalc.encompapp.com/"
+                href="https://www.efficalc.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 sx={{ color: EXTRA_LIGHT }}
@@ -194,6 +198,18 @@ export default function Intro() {
             <div className="spot spot-middle"></div>
             <div className="spot spot-right"></div>
           </RelaDiv>
+
+          <Box padding="0px" marginY="2rem" textAlign="center">
+            <iframe
+              width={mdBreakPoint ? "672" : xsBreakPoint ? "448" : "560"}
+              height={mdBreakPoint ? "378" : xsBreakPoint ? "252" : "315"}
+              src="https://www.youtube.com/embed/dI56t94r6pE"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </Box>
 
           <Stack direction="row" spacing={0} justifyContent="center" sx={{ flexWrap: "wrap" }}>
             {FeatureItem(
@@ -216,7 +232,7 @@ export default function Intro() {
           <IntroSubTitle sx={{ fontWeight: "normal" }}>
             Start using{" "}
             <InlineHref
-              href="https://efficalc.encompapp.com/"
+              href="https://www.efficalc.com/"
               target="_blank"
               rel="noopener noreferrer"
               sx={{ fontWeight: "bold" }}
